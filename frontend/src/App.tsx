@@ -1,35 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+// src/App.tsx
+import { ThemeProvider, CssBaseline, Box } from '@mui/material';
+import theme from './components/theme.ts';
+import Header from './components/Header.tsx'; 
+import './App.css';
+import ImageSlider from './components/ImageSlider.tsx';
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Потыкайся
-      </p>
-    </>
-  )
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Box sx={{ minHeight: '100vh', backgroundColor: theme.palette.background.default }}>
+        <Header />
+        <Box  sx={{ color: '#fff', p: 4 }}>
+          {/* Здесь будет основной контент сайта */}
+          <h1 className='title'>Добро пожаловать на ZUBILO</h1>
+          <p className='about'>Это сайт, посвященный культовым автомобилям АвтоВАЗа</p>
+        </Box>
+        <div>
+          <ImageSlider />
+        </div>
+          <Box className='info' sx={{ position: 'relative', bottom: 0, left: 0, right: 0, backgroundColor: theme.palette.background.paper, p: 2 }}>
+          <p className='footer' >© 2025 ZUBILO. Все права защищены.</p>
+          </Box>
+        </Box>
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
