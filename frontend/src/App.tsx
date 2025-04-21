@@ -1,11 +1,11 @@
-import NonLinearStepper from "./components/Stepper/Stepper"
+import ControlledForm from "./components/ControlledForm/ControlledForm"
 
 function App() {
 
   return (
     <>
       <div>
-        <NonLinearStepper/>
+        <ControlledForm/>
       </div>
     </>
   )
