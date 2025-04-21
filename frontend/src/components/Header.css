@@ -1,0 +1,73 @@
+/* Убираем ненужный sticky на body и #root */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  padding-top: 0px; /* Отступ, чтобы контент не скрывался под хедером */
+}
+
+.header-appbar {
+  background-color: #131313;
+  position: fixed;  /* Закрепляем хедер вверху страницы */
+  top: 0;  /* Смотрим в верхнюю часть экрана */
+  left: 0;
+  width: 100%;  /* Ширина на всю страницу */
+  z-index: 1000; /* Устанавливаем поверх остального контента */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Тень для красоты */
+}
+
+/* Оставляем другие стили без изменений */
+.header-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-title {
+  color: #fff;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+  font-size: 30px !important;
+  font-style: normal;
+  letter-spacing: 6px !important;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.header-login-button {
+  color: #ffffff !important;
+  background-color: #3f3f3f !important;
+  border: 1px solid #ffffff73 !important;
+  text-decoration: none;
+  padding: 6px 12px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+  font-size: 16px;
+  border-radius: 15px;
+  transition: transform 0.2s linear;
+}
+
+.header-login-button:hover {
+  transform: scale(1.03);
+  transform: translateY(-3px);
+}
+
+.header-register-button {
+  color: #ffffff !important;
+  background-color: #1d1d1d !important;
+  border: 1px solid #ffffff73 !important;
+  padding: 6px 12px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+  font-size: 16px;
+  border-radius: 15px;
+  transition: transform 0.2s linear;
+}
+
+.header-register-button:hover {
+  transform: scale(1.03);
+  transform: translateY(-3px);
+}
